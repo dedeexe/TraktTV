@@ -15,6 +15,15 @@
 		E2943F401F488A8500E8F20D /* RequestEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F3B1F488A8500E8F20D /* RequestEncoding.swift */; };
 		E2943F431F488D0900E8F20D /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F421F488D0900E8F20D /* AppConfig.swift */; };
 		E2943F4A1F48900800E8F20D /* Gettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F491F48900800E8F20D /* Gettable.swift */; };
+		E2943F4C1F4890D500E8F20D /* MoviesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F4B1F4890D500E8F20D /* MoviesEndpoint.swift */; };
+		E2943F4E1F48A35900E8F20D /* URLSession+curl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F4D1F48A35900E8F20D /* URLSession+curl.swift */; };
+		E2943F501F48A4A000E8F20D /* MoviesListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F4F1F48A4A000E8F20D /* MoviesListService.swift */; };
+		E2943F571F48A66900E8F20D /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F521F48A66900E8F20D /* Logger.swift */; };
+		E2943F581F48A66900E8F20D /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F531F48A66900E8F20D /* LogLevel.swift */; };
+		E2943F591F48A66900E8F20D /* LogTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F541F48A66900E8F20D /* LogTag.swift */; };
+		E2943F5A1F48A66900E8F20D /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F551F48A66900E8F20D /* Loggable.swift */; };
+		E2943F5B1F48A66900E8F20D /* TheLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F561F48A66900E8F20D /* TheLogger.swift */; };
+		E2943F5D1F48AA0900E8F20D /* HeaderCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F5C1F48AA0900E8F20D /* HeaderCreator.swift */; };
 		E2CCFEB31F48880A00F6E8B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CCFEB21F48880A00F6E8B7 /* AppDelegate.swift */; };
 		E2CCFEBA1F48880A00F6E8B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2CCFEB91F48880A00F6E8B7 /* Assets.xcassets */; };
 		E2CCFEBD1F48880A00F6E8B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2CCFEBB1F48880A00F6E8B7 /* LaunchScreen.storyboard */; };
@@ -48,6 +57,15 @@
 		E2943F3B1F488A8500E8F20D /* RequestEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestEncoding.swift; sourceTree = "<group>"; };
 		E2943F421F488D0900E8F20D /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		E2943F491F48900800E8F20D /* Gettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gettable.swift; sourceTree = "<group>"; };
+		E2943F4B1F4890D500E8F20D /* MoviesEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesEndpoint.swift; sourceTree = "<group>"; };
+		E2943F4D1F48A35900E8F20D /* URLSession+curl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+curl.swift"; sourceTree = "<group>"; };
+		E2943F4F1F48A4A000E8F20D /* MoviesListService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesListService.swift; sourceTree = "<group>"; };
+		E2943F521F48A66900E8F20D /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		E2943F531F48A66900E8F20D /* LogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
+		E2943F541F48A66900E8F20D /* LogTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTag.swift; sourceTree = "<group>"; };
+		E2943F551F48A66900E8F20D /* Loggable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
+		E2943F561F48A66900E8F20D /* TheLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheLogger.swift; sourceTree = "<group>"; };
+		E2943F5C1F48AA0900E8F20D /* HeaderCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCreator.swift; sourceTree = "<group>"; };
 		E2CCFEAF1F48880A00F6E8B7 /* TraktTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraktTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CCFEB21F48880A00F6E8B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2CCFEB91F48880A00F6E8B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,6 +122,7 @@
 		E2943F321F4888A800E8F20D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E2943F511F48A64F00E8F20D /* Logger */,
 				E2943F481F488FF100E8F20D /* Protocols */,
 				E2943F441F488E4F00E8F20D /* Helpers */,
 				E2943F361F488A6800E8F20D /* Networking */,
@@ -121,6 +140,7 @@
 				E2943F391F488A8500E8F20D /* WebService.swift */,
 				E2943F3A1F488A8500E8F20D /* RequestResult.swift */,
 				E2943F3B1F488A8500E8F20D /* RequestEncoding.swift */,
+				E2943F4D1F48A35900E8F20D /* URLSession+curl.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -137,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				E2943F451F488E7800E8F20D /* ImageLoader */,
+				E2943F5C1F48AA0900E8F20D /* HeaderCreator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -151,6 +172,7 @@
 		E2943F461F488F7100E8F20D /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
+				E2943F4B1F4890D500E8F20D /* MoviesEndpoint.swift */,
 			);
 			name = Endpoints;
 			path = Endpoint;
@@ -159,6 +181,7 @@
 		E2943F471F488F7A00E8F20D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E2943F4F1F48A4A000E8F20D /* MoviesListService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -169,6 +192,18 @@
 				E2943F491F48900800E8F20D /* Gettable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E2943F511F48A64F00E8F20D /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				E2943F521F48A66900E8F20D /* Logger.swift */,
+				E2943F531F48A66900E8F20D /* LogLevel.swift */,
+				E2943F541F48A66900E8F20D /* LogTag.swift */,
+				E2943F551F48A66900E8F20D /* Loggable.swift */,
+				E2943F561F48A66900E8F20D /* TheLogger.swift */,
+			);
+			path = Logger;
 			sourceTree = "<group>";
 		};
 		E2CCFEA61F48880A00F6E8B7 = {
@@ -363,11 +398,20 @@
 			files = (
 				E2943F3F1F488A8500E8F20D /* RequestResult.swift in Sources */,
 				E2943F4A1F48900800E8F20D /* Gettable.swift in Sources */,
+				E2943F4C1F4890D500E8F20D /* MoviesEndpoint.swift in Sources */,
+				E2943F5A1F48A66900E8F20D /* Loggable.swift in Sources */,
+				E2943F591F48A66900E8F20D /* LogTag.swift in Sources */,
+				E2943F501F48A4A000E8F20D /* MoviesListService.swift in Sources */,
 				E2943F3C1F488A8500E8F20D /* Endpoint.swift in Sources */,
 				E2943F401F488A8500E8F20D /* RequestEncoding.swift in Sources */,
+				E2943F581F48A66900E8F20D /* LogLevel.swift in Sources */,
 				E2943F431F488D0900E8F20D /* AppConfig.swift in Sources */,
+				E2943F571F48A66900E8F20D /* Logger.swift in Sources */,
+				E2943F4E1F48A35900E8F20D /* URLSession+curl.swift in Sources */,
 				E2943F3D1F488A8500E8F20D /* RequestMethod.swift in Sources */,
 				E2943F3E1F488A8500E8F20D /* WebService.swift in Sources */,
+				E2943F5D1F48AA0900E8F20D /* HeaderCreator.swift in Sources */,
+				E2943F5B1F48A66900E8F20D /* TheLogger.swift in Sources */,
 				E2CCFEB31F48880A00F6E8B7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
