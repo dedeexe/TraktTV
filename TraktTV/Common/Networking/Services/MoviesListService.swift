@@ -26,11 +26,9 @@ public struct MovieListService : Gettable, Loggable {
         
         var requestInfo = MoviesEndpoint.getMovies(page: page, size: pageSize)
         
-        let headers = HeaderCreator().defaultRequest
+        let headers = HeaderCreator().standard
         
-        WebService.instance.request(request: requestInfo, additionalHeaders: headers) { result, headers in
-            self.save(from: headers)
-            
+        WebService.instance.request(request: requestInfo, additionalHeaders: headers) { result, headers in            
             switch result {
                 case .fail(let code, let err):
                     completion(RequestResult<DataType>.fail(code, err), headers)

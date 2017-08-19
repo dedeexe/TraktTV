@@ -16,7 +16,7 @@ public struct HeaderCreator {
         
         let header : [String:String] = [
             "trakt-api-key"     : AppConfig().clientId,
-            "trakt-api-version" : AppConfig().apiVersion
+            "trakt-api-version" : String(AppConfig().apiVersion)
         ]
         
         return header

@@ -38,7 +38,7 @@ extension MoviesEndpoint : Endpoint {
     }
     
     var encoding: RequestEncoding {
-        return url
+        return .url
     }
     
     var body: Data? {
