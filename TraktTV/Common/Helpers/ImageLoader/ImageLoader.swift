@@ -1,6 +1,6 @@
 //
 //  ImageLoader.swift
-//  Post2b
+//  Dede.exe
 //
 //  Created by dede.exe on 05/06/17.
 //  Copyright © 2017 Dede. All rights reserved.

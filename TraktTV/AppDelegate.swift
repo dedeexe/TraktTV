@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         createLogger()
+        createImageLoader()
         return true
     }
 
@@ -45,6 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let loggerWorker = TheLogger()
         Logger.sharedInstance.setupLogger(logger: loggerWorker)
     }
+    
+    func createImageLoader() {
+        _ = TheImageDownloader.shared
+    }
+
     
 }
 

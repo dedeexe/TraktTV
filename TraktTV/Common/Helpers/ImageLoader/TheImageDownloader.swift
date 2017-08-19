@@ -1,6 +1,6 @@
 //
 //  P2BImageDownloader.swift
-//  Post2b
+//  Dede.exe
 //
 //  Created by dede.exe on 15/06/17.
 //  Copyright © 2017 Dede. All rights reserved.
@@ -10,7 +10,9 @@ import UIKit
 
 public class TheImageDownloader : ImageLoader {
     
-    public let shared : TheImageDownloader = TheImageDownloader()
+    public static let shared : TheImageDownloader = TheImageDownloader()
+    
+    fileprivate init() {}
     
     public func loadFrom(url:String, completion:@escaping (RequestResult<UIImage>) -> Void) {
         
