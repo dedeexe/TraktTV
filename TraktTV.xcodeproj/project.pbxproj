@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		E2943F341F48893000E8F20D /* Movies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2943F331F48893000E8F20D /* Movies.storyboard */; };
+		E2943F3C1F488A8500E8F20D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F371F488A8500E8F20D /* Endpoint.swift */; };
+		E2943F3D1F488A8500E8F20D /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F381F488A8500E8F20D /* RequestMethod.swift */; };
+		E2943F3E1F488A8500E8F20D /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F391F488A8500E8F20D /* WebService.swift */; };
+		E2943F3F1F488A8500E8F20D /* RequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F3A1F488A8500E8F20D /* RequestResult.swift */; };
+		E2943F401F488A8500E8F20D /* RequestEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F3B1F488A8500E8F20D /* RequestEncoding.swift */; };
 		E2CCFEB31F48880A00F6E8B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CCFEB21F48880A00F6E8B7 /* AppDelegate.swift */; };
 		E2CCFEBA1F48880A00F6E8B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2CCFEB91F48880A00F6E8B7 /* Assets.xcassets */; };
 		E2CCFEBD1F48880A00F6E8B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2CCFEBB1F48880A00F6E8B7 /* LaunchScreen.storyboard */; };
@@ -34,6 +39,11 @@
 
 /* Begin PBXFileReference section */
 		E2943F331F48893000E8F20D /* Movies.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Movies.storyboard; sourceTree = "<group>"; };
+		E2943F371F488A8500E8F20D /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		E2943F381F488A8500E8F20D /* RequestMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		E2943F391F488A8500E8F20D /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		E2943F3A1F488A8500E8F20D /* RequestResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
+		E2943F3B1F488A8500E8F20D /* RequestEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestEncoding.swift; sourceTree = "<group>"; };
 		E2CCFEAF1F48880A00F6E8B7 /* TraktTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraktTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CCFEB21F48880A00F6E8B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2CCFEB91F48880A00F6E8B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				E2943F351F48895100E8F20D /* Image Loader */,
+				E2943F361F488A6800E8F20D /* Networking */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -101,6 +112,18 @@
 			);
 			name = "Image Loader";
 			path = ImageLoader;
+			sourceTree = "<group>";
+		};
+		E2943F361F488A6800E8F20D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E2943F371F488A8500E8F20D /* Endpoint.swift */,
+				E2943F381F488A8500E8F20D /* RequestMethod.swift */,
+				E2943F391F488A8500E8F20D /* WebService.swift */,
+				E2943F3A1F488A8500E8F20D /* RequestResult.swift */,
+				E2943F3B1F488A8500E8F20D /* RequestEncoding.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		E2CCFEA61F48880A00F6E8B7 = {
@@ -292,6 +315,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2943F3F1F488A8500E8F20D /* RequestResult.swift in Sources */,
+				E2943F3C1F488A8500E8F20D /* Endpoint.swift in Sources */,
+				E2943F401F488A8500E8F20D /* RequestEncoding.swift in Sources */,
+				E2943F3D1F488A8500E8F20D /* RequestMethod.swift in Sources */,
+				E2943F3E1F488A8500E8F20D /* WebService.swift in Sources */,
 				E2CCFEB31F48880A00F6E8B7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
