@@ -1,7 +1,46 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Movies View Controller-->
+        <scene sceneID="MMh-cN-KgM">
+            <objects>
+                <viewController id="CgY-rw-jcC" customClass="MoviesViewController" customModule="TraktTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rnp-Qv-80Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="K0y-Yu-B1f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ovM-cx-MQU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1ix-Lc-0gH">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1ix-Lc-0gH" firstAttribute="top" secondItem="rnp-Qv-80Y" secondAttribute="bottom" id="9LX-on-fej"/>
+                            <constraint firstAttribute="trailing" secondItem="1ix-Lc-0gH" secondAttribute="trailing" id="KFQ-vV-ezp"/>
+                            <constraint firstItem="K0y-Yu-B1f" firstAttribute="top" secondItem="1ix-Lc-0gH" secondAttribute="bottom" id="QeS-tv-d2T"/>
+                            <constraint firstItem="1ix-Lc-0gH" firstAttribute="leading" secondItem="ovM-cx-MQU" secondAttribute="leading" id="RMJ-8g-rnh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="1ix-Lc-0gH" id="IyU-Ps-bFO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aum-tI-t0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-78" y="198"/>
+        </scene>
+    </scenes>
 </document>
