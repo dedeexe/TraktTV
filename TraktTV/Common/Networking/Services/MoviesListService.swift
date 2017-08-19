@@ -11,7 +11,7 @@ import ObjectMapper
 
 public struct MovieListService : Gettable, Loggable {
     
-    public typealias DataType = Movies
+    public typealias DataType = [Movie]
     public var defaultLoggingTag: LogTag = .service
     
     fileprivate var page             : Int = 0
@@ -24,7 +24,7 @@ public struct MovieListService : Gettable, Loggable {
     
     public func get(completion: @escaping (RequestResult<DataType>, [String:Any]) -> Void) {
         
-        var requestInfo = MoviesEndpoint.getMovies(page: page, size: pageSize)
+        let requestInfo = MoviesEndpoint.getMovies(page: page, size: pageSize)
         
         let headers = HeaderCreator().standard
         
@@ -34,8 +34,16 @@ public struct MovieListService : Gettable, Loggable {
                     completion(RequestResult<DataType>.fail(code, err), headers)
                     
                 case .success(let code, let json):
-                    let proposalList = Mapper<DataType>().map(JSONString: json ?? "") ?? ContentsList()
-                    completion(RequestResult<DataType>.success(code, proposalList), headers)
+                    
+                    let data = (json ?? "").data(using: .utf8) ?? Data()
+                    guard let jsonArray = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [[String:AnyObject]] else {
+                        let error = NSError(domain: "Fail to convert json", code:1000, userInfo: nil)
+                        completion(RequestResult<DataType>.fail(1000, error), headers)
+                        return
+                    }
+                    
+                    let movies = Mapper<Movie>().mapArray(JSONArray: jsonArray ?? []) ?? []
+                    completion(RequestResult<DataType>.success(code, movies), headers)
             }
         }
     }

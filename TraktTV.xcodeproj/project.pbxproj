@@ -13,6 +13,8 @@
 		E26FDCB31F48B40800956302 /* RequestHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26FDCB21F48B40800956302 /* RequestHeader.swift */; };
 		E26FDCB51F48B45000956302 /* ResponseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26FDCB41F48B45000956302 /* ResponseHeader.swift */; };
 		E26FDCB71F48B4C700956302 /* DIctionary+UrlEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26FDCB61F48B4C700956302 /* DIctionary+UrlEncoder.swift */; };
+		E26FDCBA1F48B73300956302 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26FDCB91F48B73300956302 /* Movie.swift */; };
+		E26FDCBC1F48B7FE00956302 /* IDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26FDCBB1F48B7FE00956302 /* IDs.swift */; };
 		E2943F341F48893000E8F20D /* Movies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2943F331F48893000E8F20D /* Movies.storyboard */; };
 		E2943F3C1F488A8500E8F20D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F371F488A8500E8F20D /* Endpoint.swift */; };
 		E2943F3D1F488A8500E8F20D /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F381F488A8500E8F20D /* RequestMethod.swift */; };
@@ -30,6 +32,7 @@
 		E2943F5A1F48A66900E8F20D /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F551F48A66900E8F20D /* Loggable.swift */; };
 		E2943F5B1F48A66900E8F20D /* TheLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F561F48A66900E8F20D /* TheLogger.swift */; };
 		E2943F5D1F48AA0900E8F20D /* HeaderCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F5C1F48AA0900E8F20D /* HeaderCreator.swift */; };
+		E2972C9C1F48C26200F9DE2D /* MoviesListServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2972C9B1F48C26200F9DE2D /* MoviesListServiceTests.swift */; };
 		E2CCFEB31F48880A00F6E8B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CCFEB21F48880A00F6E8B7 /* AppDelegate.swift */; };
 		E2CCFEBA1F48880A00F6E8B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2CCFEB91F48880A00F6E8B7 /* Assets.xcassets */; };
 		E2CCFEBD1F48880A00F6E8B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2CCFEBB1F48880A00F6E8B7 /* LaunchScreen.storyboard */; };
@@ -67,6 +70,8 @@
 		E26FDCB21F48B40800956302 /* RequestHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestHeader.swift; sourceTree = "<group>"; };
 		E26FDCB41F48B45000956302 /* ResponseHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseHeader.swift; sourceTree = "<group>"; };
 		E26FDCB61F48B4C700956302 /* DIctionary+UrlEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DIctionary+UrlEncoder.swift"; sourceTree = "<group>"; };
+		E26FDCB91F48B73300956302 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		E26FDCBB1F48B7FE00956302 /* IDs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDs.swift; sourceTree = "<group>"; };
 		E2943F331F48893000E8F20D /* Movies.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Movies.storyboard; sourceTree = "<group>"; };
 		E2943F371F488A8500E8F20D /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		E2943F381F488A8500E8F20D /* RequestMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
@@ -84,6 +89,7 @@
 		E2943F551F48A66900E8F20D /* Loggable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
 		E2943F561F48A66900E8F20D /* TheLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheLogger.swift; sourceTree = "<group>"; };
 		E2943F5C1F48AA0900E8F20D /* HeaderCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCreator.swift; sourceTree = "<group>"; };
+		E2972C9B1F48C26200F9DE2D /* MoviesListServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesListServiceTests.swift; sourceTree = "<group>"; };
 		E2CCFEAF1F48880A00F6E8B7 /* TraktTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraktTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CCFEB21F48880A00F6E8B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2CCFEB91F48880A00F6E8B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,6 +154,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E26FDCB81F48B57800956302 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E26FDCB91F48B73300956302 /* Movie.swift */,
+				E26FDCBB1F48B7FE00956302 /* IDs.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E2943F301F48887E00E8F20D /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +174,7 @@
 		E2943F311F4888A400E8F20D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E2972C951F48C18F00F9DE2D /* MoviesList */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -166,6 +182,7 @@
 		E2943F321F4888A800E8F20D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E26FDCB81F48B57800956302 /* Model */,
 				E2943F511F48A64F00E8F20D /* Logger */,
 				E2943F481F488FF100E8F20D /* Protocols */,
 				E2943F441F488E4F00E8F20D /* Helpers */,
@@ -253,6 +270,38 @@
 			path = Logger;
 			sourceTree = "<group>";
 		};
+		E2972C951F48C18F00F9DE2D /* MoviesList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MoviesList;
+			sourceTree = "<group>";
+		};
+		E2972C961F48C1BD00F9DE2D /* Comon */ = {
+			isa = PBXGroup;
+			children = (
+				E2972C971F48C20100F9DE2D /* Networking */,
+			);
+			name = Comon;
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E2972C971F48C20100F9DE2D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E2972C981F48C21900F9DE2D /* Services */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E2972C981F48C21900F9DE2D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E2972C9B1F48C26200F9DE2D /* MoviesListServiceTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		E2CCFEA61F48880A00F6E8B7 = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +342,7 @@
 		E2CCFEC61F48880A00F6E8B7 /* TraktTVTests */ = {
 			isa = PBXGroup;
 			children = (
+				E2972C961F48C1BD00F9DE2D /* Comon */,
 				E2CCFEC71F48880A00F6E8B7 /* TraktTVTests.swift */,
 				E2CCFEC91F48880A00F6E8B7 /* Info.plist */,
 			);
@@ -606,11 +656,13 @@
 				E2943F431F488D0900E8F20D /* AppConfig.swift in Sources */,
 				E2943F571F48A66900E8F20D /* Logger.swift in Sources */,
 				E2943F4E1F48A35900E8F20D /* URLSession+curl.swift in Sources */,
+				E26FDCBA1F48B73300956302 /* Movie.swift in Sources */,
 				E26FDCB71F48B4C700956302 /* DIctionary+UrlEncoder.swift in Sources */,
 				E2943F3D1F488A8500E8F20D /* RequestMethod.swift in Sources */,
 				E2943F3E1F488A8500E8F20D /* WebService.swift in Sources */,
 				E2943F5D1F48AA0900E8F20D /* HeaderCreator.swift in Sources */,
 				E2943F5B1F48A66900E8F20D /* TheLogger.swift in Sources */,
+				E26FDCBC1F48B7FE00956302 /* IDs.swift in Sources */,
 				E2CCFEB31F48880A00F6E8B7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,6 +671,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2972C9C1F48C26200F9DE2D /* MoviesListServiceTests.swift in Sources */,
 				E2CCFEC81F48880A00F6E8B7 /* TraktTVTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
