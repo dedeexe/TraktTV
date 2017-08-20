@@ -10,4 +10,5 @@ import UIKit
 
 public protocol MoviesView : class, Alertable {
     func reload()
+    func reloadCellAtIndex(index:Int)
 }

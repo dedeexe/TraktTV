@@ -50,13 +50,39 @@ extension MoviesPresenter : MoviesModule {
 
 // MARK: - Output Interactor Delegate
 extension MoviesPresenter : MoviesOutput {
+    public func fetch(movie: TMDBEntity) {
+        if let index = mergeRightMovieWith(entity: movie) {
+            view?.reloadCellAtIndex(index: index)
+        }
+    }
+
     public func fetch(movies: [Movie]) {
         self.movies.append(contentsOf: movies)
         view?.reload()
+        self.refreshTMDBEntities()
     }
     
     public func error(code: Int, description: String) {
         self.view?.showAlert(message: "Falha ao recuperar filmes.", titled: nil)
+    }
+}
+
+
+// MARK: - Helpers
+extension MoviesPresenter {
+    public func refreshTMDBEntities() {
+        for movie in movies where movie.tmdbEntity == nil {
+            guard let tmdbId = movie.ids?.tmdb else { continue }
+            interactor?.getMovieBy(tmdb: tmdbId)
+        }
+    }
+    
+    public func mergeRightMovieWith(entity:TMDBEntity) -> Int?  {
+        guard let id = entity.id else { return nil }
+        guard let index = movies.index(where: { return $0.ids?.tmdb ?? -1 == id }) else { return nil }
+        
+        movies[index].tmdbEntity = entity
+        return index
     }
 }
 

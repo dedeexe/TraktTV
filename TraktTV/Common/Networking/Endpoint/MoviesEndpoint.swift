@@ -15,9 +15,16 @@ enum MoviesEndpoint {
 
 extension MoviesEndpoint : Endpoint {
     
+    var baseURL: String {
+        switch self {
+            case .getMovies:    return AppConfig().baseURL
+            case .getMovie:     return AppConfig().tmdbBaseURL
+        }
+    }
+    
     var path: String {
         switch self {
-            case .getMovie(let id):     return "movies/\(id)"
+            case .getMovie(let id):     return "/movie/\(id)"
             case .getMovies:            return "/movies/popular"
         }
     }
@@ -28,7 +35,7 @@ extension MoviesEndpoint : Endpoint {
     
     var parameters: [String : Any] {
         switch self {
-            case .getMovie:                         return [:]
+            case .getMovie:                         return ["api_key":AppConfig().tmdbApiKey]
             case .getMovies(let page, let size):    return ["page":page, "limit":size]
         }
     }

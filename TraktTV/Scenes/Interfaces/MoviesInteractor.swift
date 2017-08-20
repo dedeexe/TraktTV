@@ -10,9 +10,11 @@ import Foundation
 
 public protocol MoviesInput : class {
     func getMovies(at page:Int, groupedBy quantity:Int)
+    func getMovieBy(tmdb id:Int)
 }
 
 public protocol MoviesOutput : class {
     func fetch(movies:[Movie])
+    func fetch(movie:TMDBEntity)
     func error(code:Int, description:String)
 }

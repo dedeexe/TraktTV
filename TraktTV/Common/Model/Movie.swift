@@ -11,9 +11,11 @@ import ObjectMapper
 
 public struct Movie : Mappable {
     
-    public var title    : String?
-    public var year     : Int?
-    public var ids      : IDs?
+    public var title        : String?
+    public var year         : Int?
+    public var ids          : IDs?
+    
+    public var tmdbEntity   : TMDBEntity?
     
     public init() {}
     public init?(map: Map) {}

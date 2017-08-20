@@ -15,6 +15,7 @@
 		E26FDCB71F48B4C700956302 /* DIctionary+UrlEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26FDCB61F48B4C700956302 /* DIctionary+UrlEncoder.swift */; };
 		E26FDCBA1F48B73300956302 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26FDCB91F48B73300956302 /* Movie.swift */; };
 		E26FDCBC1F48B7FE00956302 /* IDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26FDCBB1F48B7FE00956302 /* IDs.swift */; };
+		E27630DC1F4A3D930007ED0E /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27630DB1F4A3D930007ED0E /* URLImage.swift */; };
 		E2943F341F48893000E8F20D /* Movies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2943F331F48893000E8F20D /* Movies.storyboard */; };
 		E2943F3C1F488A8500E8F20D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F371F488A8500E8F20D /* Endpoint.swift */; };
 		E2943F3D1F488A8500E8F20D /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2943F381F488A8500E8F20D /* RequestMethod.swift */; };
@@ -56,6 +57,8 @@
 		E2972CD31F49C1D000F9DE2D /* AppMainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2972CD21F49C1D000F9DE2D /* AppMainRouter.swift */; };
 		E2972CD61F49C43600F9DE2D /* StoryboardIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2972CD51F49C43600F9DE2D /* StoryboardIdentifier.swift */; };
 		E2972CD91F49C48E00F9DE2D /* ConfiguratorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2972CD81F49C48E00F9DE2D /* ConfiguratorError.swift */; };
+		E2972CDB1F4A2A5800F9DE2D /* TMDBEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2972CDA1F4A2A5800F9DE2D /* TMDBEntity.swift */; };
+		E2972CDD1F4A2BD600F9DE2D /* TMDBMovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2972CDC1F4A2BD600F9DE2D /* TMDBMovieService.swift */; };
 		E2CCFEB31F48880A00F6E8B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CCFEB21F48880A00F6E8B7 /* AppDelegate.swift */; };
 		E2CCFEBA1F48880A00F6E8B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2CCFEB91F48880A00F6E8B7 /* Assets.xcassets */; };
 		E2CCFEBD1F48880A00F6E8B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2CCFEBB1F48880A00F6E8B7 /* LaunchScreen.storyboard */; };
@@ -95,6 +98,7 @@
 		E26FDCB61F48B4C700956302 /* DIctionary+UrlEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DIctionary+UrlEncoder.swift"; sourceTree = "<group>"; };
 		E26FDCB91F48B73300956302 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		E26FDCBB1F48B7FE00956302 /* IDs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDs.swift; sourceTree = "<group>"; };
+		E27630DB1F4A3D930007ED0E /* URLImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		E2943F331F48893000E8F20D /* Movies.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Movies.storyboard; sourceTree = "<group>"; };
 		E2943F371F488A8500E8F20D /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		E2943F381F488A8500E8F20D /* RequestMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 		E2972CD21F49C1D000F9DE2D /* AppMainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMainRouter.swift; sourceTree = "<group>"; };
 		E2972CD51F49C43600F9DE2D /* StoryboardIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifier.swift; sourceTree = "<group>"; };
 		E2972CD81F49C48E00F9DE2D /* ConfiguratorError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguratorError.swift; sourceTree = "<group>"; };
+		E2972CDA1F4A2A5800F9DE2D /* TMDBEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDBEntity.swift; sourceTree = "<group>"; };
+		E2972CDC1F4A2BD600F9DE2D /* TMDBMovieService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDBMovieService.swift; sourceTree = "<group>"; };
 		E2CCFEAF1F48880A00F6E8B7 /* TraktTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraktTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CCFEB21F48880A00F6E8B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2CCFEB91F48880A00F6E8B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,6 +211,7 @@
 			children = (
 				E26FDCB91F48B73300956302 /* Movie.swift */,
 				E26FDCBB1F48B7FE00956302 /* IDs.swift */,
+				E2972CDA1F4A2A5800F9DE2D /* TMDBEntity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,6 +280,7 @@
 				E2943F5C1F48AA0900E8F20D /* HeaderCreator.swift */,
 				E26FDCB21F48B40800956302 /* RequestHeader.swift */,
 				E26FDCB41F48B45000956302 /* ResponseHeader.swift */,
+				E27630DB1F4A3D930007ED0E /* URLImage.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -299,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				E2943F4F1F48A4A000E8F20D /* MoviesListService.swift */,
+				E2972CDC1F4A2BD600F9DE2D /* TMDBMovieService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -809,7 +818,9 @@
 				E2943F571F48A66900E8F20D /* Logger.swift in Sources */,
 				E2943F4E1F48A35900E8F20D /* URLSession+curl.swift in Sources */,
 				E2972CA41F48CC7800F9DE2D /* MoviesView.swift in Sources */,
+				E2972CDD1F4A2BD600F9DE2D /* TMDBMovieService.swift in Sources */,
 				E2972CAC1F48CC8400F9DE2D /* MoviesInputInteractor.swift in Sources */,
+				E27630DC1F4A3D930007ED0E /* URLImage.swift in Sources */,
 				E26FDCBA1F48B73300956302 /* Movie.swift in Sources */,
 				E2972CA21F48CC7800F9DE2D /* MoviesInteractor.swift in Sources */,
 				E26FDCB71F48B4C700956302 /* DIctionary+UrlEncoder.swift in Sources */,
@@ -821,6 +832,7 @@
 				E2943F3E1F488A8500E8F20D /* WebService.swift in Sources */,
 				E2972CAD1F48CC8400F9DE2D /* MoviesPresenter.swift in Sources */,
 				E2943F5D1F48AA0900E8F20D /* HeaderCreator.swift in Sources */,
+				E2972CDB1F4A2A5800F9DE2D /* TMDBEntity.swift in Sources */,
 				E2972CD31F49C1D000F9DE2D /* AppMainRouter.swift in Sources */,
 				E2972CD91F49C48E00F9DE2D /* ConfiguratorError.swift in Sources */,
 				E2972CBC1F48DC2900F9DE2D /* Alertable.swift in Sources */,

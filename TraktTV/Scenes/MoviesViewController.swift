@@ -61,4 +61,8 @@ extension MoviesViewController : MoviesView {
             self.tableView.reloadData()
         }
     }
+    
+    func reloadCellAtIndex(index: Int) {
+        tableHandler?.reloadCellAtIndex(index)
+    }
 }

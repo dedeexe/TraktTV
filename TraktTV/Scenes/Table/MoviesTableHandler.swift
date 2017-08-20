@@ -42,6 +42,19 @@ public class MoviesTableHandler : NSObject {
     func hideLoadingActivity() {
         isShowLoading = false
     }
+    
+    func reloadCellAtIndex(_ index:Int) {
+        let indexPath = IndexPath(row: index, section: 0)
+        let visibleIndexes = tableView?.indexPathsForVisibleRows ?? []
+        
+        if visibleIndexes.contains(indexPath) {
+            DispatchQueue.main.async { [unowned self] in
+                self.tableView?.beginUpdates()
+                self.tableView?.reloadRows(at: [indexPath], with: .fade)
+                self.tableView?.endUpdates()
+            }
+        }
+    }
 }
 
 extension MoviesTableHandler : UITableViewDataSource {

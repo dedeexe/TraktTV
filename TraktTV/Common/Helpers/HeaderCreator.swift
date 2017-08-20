@@ -23,4 +23,14 @@ public struct HeaderCreator {
         
     }
     
+    public var tmdb : [String:String] {
+        
+        let header : [String:String] = [
+            "api-key"     : AppConfig().tmdbApiKey,
+        ]
+        
+        return header
+        
+    }
+    
 }

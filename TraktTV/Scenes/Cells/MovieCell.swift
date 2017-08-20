@@ -23,6 +23,8 @@ public class MovieCell: UITableViewCell {
     fileprivate var finalSpacing                        : CGFloat = 0.0
     fileprivate var indexPath                           : IndexPath = IndexPath(row: 0, section: 0)
     
+    fileprivate var movie                               : Movie?
+    
     public weak var imageLoader : ImageLoader?
         
     override public func awakeFromNib() {
@@ -84,11 +86,8 @@ extension MovieCell {
 // MARK: - Configurations
 extension MovieCell {
 
-    func setupNameLabel() {
-    }
-
-    func setupYearLabel() {
-    }
+    func setupNameLabel() {}
+    func setupYearLabel() {}
     
     func setupShadowView() {
         let gradient = CAGradientLayer()
@@ -123,11 +122,29 @@ extension MovieCell {
 extension MovieCell {
     func update(movie:Movie?, at indexPath:IndexPath) {
         self.indexPath = indexPath
+        self.movie = movie
+        
         nameLabel.text = movie?.title
         yearLabel.text = nil
         
         if let year = movie?.year {
             yearLabel.text = String(year)
         }
+        
+        updateImage()
+    }
+    
+    func updateImage() {
+        guard let _ = movie?.tmdbEntity?.poster_path else {
+            self.loadImageBy(url: nil)
+            return
+        }
+        
+        guard let imageURL = URLImage().tmdb(for: self.movie) else {
+            self.loadImageBy(url: nil)
+            return
+        }
+        
+        self.loadImageBy(url: imageURL)
     }
 }
