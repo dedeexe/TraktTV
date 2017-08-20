@@ -12,7 +12,7 @@
         <!--Movies View Controller-->
         <scene sceneID="MMh-cN-KgM">
             <objects>
-                <viewController id="CgY-rw-jcC" customClass="MoviesViewController" customModule="TraktTV" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoviesViewController" id="CgY-rw-jcC" customClass="MoviesViewController" customModule="TraktTV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rnp-Qv-80Y"/>
                         <viewControllerLayoutGuide type="bottom" id="K0y-Yu-B1f"/>

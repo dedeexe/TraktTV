@@ -8,17 +8,21 @@
 
 import Foundation
 
-public class MoviesPresenter {
+public class MoviesPresenter : Loggable {
     
-    fileprivate weak var view   : MoviesView?
-    fileprivate var interactor  : MoviesInput?
-    fileprivate var router      : MoviesWireframe?
+    public var defaultLoggingTag: LogTag = .presenter
     
-    fileprivate var page        : Int = 0
-    fileprivate var pageCount   : Int = 1
-    fileprivate let quantity    : Int = 40
+    fileprivate weak var view               : MoviesView?
+    fileprivate var interactor              : MoviesInput?
+    fileprivate var router                  : MoviesWireframe?
     
-    fileprivate var movies      : [Movie] = []
+    fileprivate var page                    : Int = 0
+    fileprivate var pageCount               : Int = 1
+    fileprivate let quantity                : Int = 40
+    
+    fileprivate(set) public var movies      : [Movie] = []
+    
+    public var imageLoader                  : ImageLoader? = TheImageDownloader.shared
     
     public init() {}
     
@@ -39,7 +43,7 @@ public class MoviesPresenter {
 // MARK: - Presenter Delegates
 extension MoviesPresenter : MoviesModule {
     public func getMovies() {
-        
+        self.log(level: .verbose, "New Messages requested")
         interactor?.getMovies(at: page, groupedBy: quantity)
     }
 }
@@ -48,9 +52,21 @@ extension MoviesPresenter : MoviesModule {
 extension MoviesPresenter : MoviesOutput {
     public func fetch(movies: [Movie]) {
         self.movies.append(contentsOf: movies)
+        view?.reload()
     }
     
     public func error(code: Int, description: String) {
         self.view?.showAlert(message: "Falha ao recuperar filmes.", titled: nil)
+    }
+}
+
+// MARK: - Output Interactor Delegate
+extension MoviesPresenter : MoviesTableHandlerDelegate {
+    public func moviesTableHandlerDidRequestNewItems(handler: MoviesTableHandler) {
+        
+    }
+    
+    public func moviesTableHandler(handler: MoviesTableHandler, didSelectItemAt indexPath: IndexPath) {
+        
     }
 }

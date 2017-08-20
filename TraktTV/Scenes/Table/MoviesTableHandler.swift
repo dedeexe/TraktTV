@@ -29,11 +29,10 @@ public class MoviesTableHandler : NSObject {
     }
     
     func setupTable(_ tableView:UITableView) {
-        //tableView.backgroundColor = ColorPallete.tableView
         tableView.separatorStyle = .none
         
         tableView.registerCell(named: String(describing:LoadingCell.self))
-        //tableView.registerCell(named: String(describing:MovieCell.self))
+        tableView.registerCell(named: String(describing:MovieCell.self))
     }
     
     func showLoadingActivity() {
@@ -114,11 +113,10 @@ extension MoviesTableHandler {
             return UITableViewCell(style: .default, reuseIdentifier: "cell")
         }
         
-        let notification = handlerDelegate?.movies[indexPath.row]
+        let movie = handlerDelegate?.movies[indexPath.row]
         cell.imageLoader = imageLoader
-        cell.delegate = self
         cell.selectionStyle = .none
-        cell.update(notification: notification, withIndex: indexPath)
+        cell.update(movie: movie, at: indexPath)
         return cell
     }
     

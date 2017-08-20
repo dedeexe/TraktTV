@@ -9,14 +9,26 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, Loggable {
 
     var window: UIWindow?
-
+    var defaultLoggingTag : LogTag = .appDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         createLogger()
         createImageLoader()
+        
+        self.log(level: .info, "Link... I'm In...")
+        
+        let bounds = UIScreen.main.bounds
+        window = UIWindow(frame: bounds)
+        
+        guard let windowReference = window else {
+            return false
+        }
+        
+        AppMainRouter().gotoMainScreen(using:windowReference)
+
         return true
     }
 

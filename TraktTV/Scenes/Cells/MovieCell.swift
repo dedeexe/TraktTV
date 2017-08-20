@@ -1,6 +1,6 @@
 //
 //  CampaignCell.swift
-//  Post2b
+//  Dede.exe
 //
 //  Created by Dede on 13/06/17.
 //  Copyright © 2017 Dede. All rights reserved.
@@ -10,6 +10,7 @@ import UIKit
 
 public class MovieCell: UITableViewCell {
     
+    @IBOutlet fileprivate weak var movieImage           : UIImageView!
     @IBOutlet fileprivate weak var nameLabel            : UILabel!
     @IBOutlet fileprivate weak var yearLabel            : UILabel!
     @IBOutlet fileprivate weak var shadowView           : UIView!
@@ -20,9 +21,10 @@ public class MovieCell: UITableViewCell {
     fileprivate let paralaxFactor                       : CGFloat = 70.0
     fileprivate var initialSpacing                      : CGFloat = 0.0
     fileprivate var finalSpacing                        : CGFloat = 0.0
+    fileprivate var indexPath                           : IndexPath = IndexPath(row: 0, section: 0)
     
-    fileprivate weak var imageLoader : ImageLoader?
-    
+    public weak var imageLoader : ImageLoader?
+        
     override public func awakeFromNib() {
         super.awakeFromNib()
         setup()
@@ -33,14 +35,10 @@ public class MovieCell: UITableViewCell {
     }
     
     func setup() {
-        setupPriceLabel()
+        setupNameLabel()
         setupYearLabel()
         setupShadowView()
         setupParallax()
-    }
-    
-    func reload() {
-        reloadPrice()
     }
     
     func inject(imageLoader:ImageLoader?) {
@@ -52,7 +50,7 @@ public class MovieCell: UITableViewCell {
 extension MovieCell {
     func loadImageBy(url:String?) {
         guard let url = url else {
-            cellImage = nil
+            movieImage.image = nil
             return
         }
         
@@ -60,18 +58,16 @@ extension MovieCell {
             DispatchQueue.main.async { [weak self] in
                 switch result {
                     case .success(_, let fulfilledImage):
-                        self?.campaignImage.image = fulfilledImage
+                        self?.movieImage.image = fulfilledImage
                     case .fail:
-                        self?.campaignImage.image = nil
+                        self?.movieImage.image = nil
                 }
             }
         }
     }
     
     override public func prepareForReuse() {
-        priceLabel.text = nil
-        campaignImage.image = nil
-        setupSocialLabels()
+        movieImage.image = nil
     }
 }
 
@@ -125,10 +121,13 @@ extension MovieCell {
 
 // MARK: - Refresh
 extension MovieCell {
-    
-    func update(movie:Movie?) {
+    func update(movie:Movie?, at indexPath:IndexPath) {
+        self.indexPath = indexPath
         nameLabel.text = movie?.title
-        yearLabel.text = movie?.year
+        yearLabel.text = nil
+        
+        if let year = movie?.year {
+            yearLabel.text = String(year)
+        }
     }
-    
 }

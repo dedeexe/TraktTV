@@ -9,5 +9,7 @@
 import Foundation
 
 public protocol MoviesModule {
+    var imageLoader : ImageLoader? { get }
+    
     func getMovies()
 }

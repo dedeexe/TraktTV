@@ -12,17 +12,12 @@ public class MoviesConfigurator {
     
     public init() {}
     
-    func create() -> MoviesViewController {
+    func create() throws -> MoviesViewController {
         
-//        Use this implementation
-//        guard let viewController = StoryboardIdentifier.authentication.storyboard?.instantiateViewController(withIdentifier: "MoviesViewController") as? MoviesViewController else {
-//            return
-//        }
-//        
-//        OR
-//        User this another one
-        let viewController = MoviesViewController()
-
+        guard let viewController = StoryboardIdentifier.movies.storyboard?.instantiateViewController(withIdentifier: "MoviesViewController") as? MoviesViewController else {
+            throw ConfiguratorError.viewControllerNotFound
+        }
+        
         let presenter = MoviesPresenter()
         let router = MoviesRouter()
         let interactor = MoviesInputInteractor()
@@ -30,10 +25,10 @@ public class MoviesConfigurator {
         presenter.inject(view: viewController, interactor: interactor, router: router)
         interactor.inject(output: presenter)
         viewController.inject(presenter: presenter)
+        viewController.inject(tableHandler: presenter)
         router.inject(viewController: viewController)
         
         return viewController
     }
     
 }
-

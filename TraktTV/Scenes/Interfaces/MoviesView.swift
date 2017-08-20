@@ -9,5 +9,5 @@
 import UIKit
 
 public protocol MoviesView : class, Alertable {
-    func show(movies:[Movie])
+    func reload()
 }

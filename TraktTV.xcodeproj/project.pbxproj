@@ -53,6 +53,9 @@
 		E2972CC71F48E1FC00F9DE2D /* UITableView+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2972CC61F48E1FC00F9DE2D /* UITableView+utils.swift */; };
 		E2972CCF1F48E2B600F9DE2D /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2972CCD1F48E2B600F9DE2D /* MovieCell.swift */; };
 		E2972CD01F48E2B600F9DE2D /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2972CCE1F48E2B600F9DE2D /* MovieCell.xib */; };
+		E2972CD31F49C1D000F9DE2D /* AppMainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2972CD21F49C1D000F9DE2D /* AppMainRouter.swift */; };
+		E2972CD61F49C43600F9DE2D /* StoryboardIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2972CD51F49C43600F9DE2D /* StoryboardIdentifier.swift */; };
+		E2972CD91F49C48E00F9DE2D /* ConfiguratorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2972CD81F49C48E00F9DE2D /* ConfiguratorError.swift */; };
 		E2CCFEB31F48880A00F6E8B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CCFEB21F48880A00F6E8B7 /* AppDelegate.swift */; };
 		E2CCFEBA1F48880A00F6E8B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2CCFEB91F48880A00F6E8B7 /* Assets.xcassets */; };
 		E2CCFEBD1F48880A00F6E8B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2CCFEBB1F48880A00F6E8B7 /* LaunchScreen.storyboard */; };
@@ -130,6 +133,9 @@
 		E2972CC61F48E1FC00F9DE2D /* UITableView+utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+utils.swift"; sourceTree = "<group>"; };
 		E2972CCD1F48E2B600F9DE2D /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		E2972CCE1F48E2B600F9DE2D /* MovieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		E2972CD21F49C1D000F9DE2D /* AppMainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMainRouter.swift; sourceTree = "<group>"; };
+		E2972CD51F49C43600F9DE2D /* StoryboardIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifier.swift; sourceTree = "<group>"; };
+		E2972CD81F49C48E00F9DE2D /* ConfiguratorError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguratorError.swift; sourceTree = "<group>"; };
 		E2CCFEAF1F48880A00F6E8B7 /* TraktTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraktTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CCFEB21F48880A00F6E8B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2CCFEB91F48880A00F6E8B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -222,13 +228,15 @@
 		E2943F321F4888A800E8F20D /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				E2972CC31F48E08A00F9DE2D /* Extensions */,
 				E2972CB31F48D2DC00F9DE2D /* Components */,
-				E26FDCB81F48B57800956302 /* Model */,
-				E2943F511F48A64F00E8F20D /* Logger */,
-				E2943F481F488FF100E8F20D /* Protocols */,
+				E2972CD71F49C46200F9DE2D /* Errors */,
+				E2972CD41F49C27200F9DE2D /* Enumerations */,
+				E2972CC31F48E08A00F9DE2D /* Extensions */,
 				E2943F441F488E4F00E8F20D /* Helpers */,
+				E2943F511F48A64F00E8F20D /* Logger */,
+				E26FDCB81F48B57800956302 /* Model */,
 				E2943F361F488A6800E8F20D /* Networking */,
+				E2943F481F488FF100E8F20D /* Protocols */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -411,6 +419,31 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		E2972CD11F49C16400F9DE2D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				E2CCFEB21F48880A00F6E8B7 /* AppDelegate.swift */,
+				E2972CD21F49C1D000F9DE2D /* AppMainRouter.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		E2972CD41F49C27200F9DE2D /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				E2972CD51F49C43600F9DE2D /* StoryboardIdentifier.swift */,
+			);
+			name = Enumerations;
+			sourceTree = "<group>";
+		};
+		E2972CD71F49C46200F9DE2D /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				E2972CD81F49C48E00F9DE2D /* ConfiguratorError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		E2CCFEA61F48880A00F6E8B7 = {
 			isa = PBXGroup;
 			children = (
@@ -436,11 +469,11 @@
 		E2CCFEB11F48880A00F6E8B7 /* TraktTV */ = {
 			isa = PBXGroup;
 			children = (
+				E2972CD11F49C16400F9DE2D /* Application */,
 				E2943F411F488CE700E8F20D /* Config */,
 				E2943F321F4888A800E8F20D /* Common */,
 				E2943F311F4888A400E8F20D /* Scenes */,
 				E2943F301F48887E00E8F20D /* Storyboards */,
-				E2CCFEB21F48880A00F6E8B7 /* AppDelegate.swift */,
 				E2CCFEB91F48880A00F6E8B7 /* Assets.xcassets */,
 				E2CCFEBB1F48880A00F6E8B7 /* LaunchScreen.storyboard */,
 				E2CCFEBE1F48880A00F6E8B7 /* Info.plist */,
@@ -784,9 +817,12 @@
 				E2972CAE1F48CC8400F9DE2D /* MoviesRouter.swift in Sources */,
 				E2972CC11F48DDE200F9DE2D /* ImageLoader.swift in Sources */,
 				E2943F3D1F488A8500E8F20D /* RequestMethod.swift in Sources */,
+				E2972CD61F49C43600F9DE2D /* StoryboardIdentifier.swift in Sources */,
 				E2943F3E1F488A8500E8F20D /* WebService.swift in Sources */,
 				E2972CAD1F48CC8400F9DE2D /* MoviesPresenter.swift in Sources */,
 				E2943F5D1F48AA0900E8F20D /* HeaderCreator.swift in Sources */,
+				E2972CD31F49C1D000F9DE2D /* AppMainRouter.swift in Sources */,
+				E2972CD91F49C48E00F9DE2D /* ConfiguratorError.swift in Sources */,
 				E2972CBC1F48DC2900F9DE2D /* Alertable.swift in Sources */,
 				E2943F5B1F48A66900E8F20D /* TheLogger.swift in Sources */,
 				E2972CA51F48CC7800F9DE2D /* MoviesWireframe.swift in Sources */,
@@ -942,6 +978,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SD6HQTT68J;
 				INFOPLIST_FILE = TraktTV/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = exe.dede.TraktTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -956,6 +993,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SD6HQTT68J;
 				INFOPLIST_FILE = TraktTV/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = exe.dede.TraktTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
