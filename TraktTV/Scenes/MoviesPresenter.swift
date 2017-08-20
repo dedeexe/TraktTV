@@ -22,6 +22,8 @@ public class MoviesPresenter : Loggable {
     
     fileprivate(set) public var movies      : [Movie] = []
     
+    fileprivate var pullRefreshed           : Bool = false
+    
     public var imageLoader                  : ImageLoader? = TheImageDownloader.shared
     
     public init() {}
@@ -43,6 +45,11 @@ public class MoviesPresenter : Loggable {
 // MARK: - Presenter Delegates
 extension MoviesPresenter : MoviesModule {
     public func getMovies() {
+        
+        guard page < pageCount else { return }
+        
+        self.page += 1
+        
         self.log(level: .verbose, "New Messages requested")
         interactor?.getMovies(at: page, groupedBy: quantity)
     }
@@ -57,9 +64,20 @@ extension MoviesPresenter : MoviesOutput {
     }
 
     public func fetch(movies: [Movie]) {
+        if pullRefreshed {
+            pullRefreshed = false
+            self.movies.removeAll()
+        }
+        
         self.movies.append(contentsOf: movies)
+        view?.stopPullRefresh()
         view?.reload()
         self.refreshTMDBEntities()
+    }
+    
+    public func fetch(currentPage: Int, pagesCount: Int) {
+        self.page = currentPage
+        self.pageCount = pagesCount
     }
     
     public func error(code: Int, description: String) {
@@ -89,10 +107,17 @@ extension MoviesPresenter {
 // MARK: - Output Interactor Delegate
 extension MoviesPresenter : MoviesTableHandlerDelegate {
     public func moviesTableHandlerDidRequestNewItems(handler: MoviesTableHandler) {
-        
+        getMovies()
     }
     
     public func moviesTableHandler(handler: MoviesTableHandler, didSelectItemAt indexPath: IndexPath) {
         
+    }
+    
+    public func moviesTableHandlerDidPullRefresh(handler: MoviesTableHandler) {
+        page = 0
+        pageCount = 1
+        pullRefreshed = true
+        getMovies()
     }
 }

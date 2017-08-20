@@ -31,7 +31,11 @@ public class MoviesInputInteractor : MoviesInput, Loggable {
         service.get { [unowned self] (result, headers) in
             switch result {
                 case .success(_, let movies):
+                    let currentPage = Int((headers["x-pagination-page"] as? String) ?? "0") ?? 0
+                    let pagesCount = Int((headers["x-pagination-page-count"] as? String) ?? "0") ?? 0
+                    self.output?.fetch(currentPage: currentPage, pagesCount: pagesCount)
                     self.output?.fetch(movies: movies)
+                
                 case .fail(let code, let error):
                     self.output?.error(code: code, description: error.localizedDescription)
             }

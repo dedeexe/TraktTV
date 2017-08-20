@@ -65,4 +65,8 @@ extension MoviesViewController : MoviesView {
     func reloadCellAtIndex(index: Int) {
         tableHandler?.reloadCellAtIndex(index)
     }
+    
+    func stopPullRefresh() {
+        tableHandler?.endPullRefresh()
+    }
 }

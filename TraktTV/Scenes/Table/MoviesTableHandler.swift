@@ -12,6 +12,7 @@ public protocol MoviesTableHandlerDelegate : class {
     var movies:[Movie] { get }
     func moviesTableHandler(handler:MoviesTableHandler, didSelectItemAt indexPath:IndexPath)
     func moviesTableHandlerDidRequestNewItems(handler:MoviesTableHandler)
+    func moviesTableHandlerDidPullRefresh(handler:MoviesTableHandler)
 }
 
 public class MoviesTableHandler : NSObject {
@@ -23,6 +24,8 @@ public class MoviesTableHandler : NSObject {
     weak var imageLoader : ImageLoader?
     weak var tableView : UITableView?
     
+    var refreshControl : UIRefreshControl!
+    
     public init(with imageLoader: ImageLoader?) {
         super.init()
         self.imageLoader = imageLoader
@@ -33,14 +36,32 @@ public class MoviesTableHandler : NSObject {
         
         tableView.registerCell(named: String(describing:LoadingCell.self))
         tableView.registerCell(named: String(describing:MovieCell.self))
+        setupRefreshControl(tableView: tableView)
     }
     
-    func showLoadingActivity() {
+    func setupRefreshControl(tableView:UITableView) {
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(pullRefresh), for: .valueChanged)
+        
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+    }
+    
+    public func showLoadingActivity() {
         isShowLoading = true
     }
     
-    func hideLoadingActivity() {
+    public func hideLoadingActivity() {
         isShowLoading = false
+    }
+    
+    public func endPullRefresh() {
+        DispatchQueue.main.async { [unowned self] in
+            self.refreshControl.endRefreshing()
+        }
     }
     
     func reloadCellAtIndex(_ index:Int) {
@@ -163,5 +184,9 @@ extension MoviesTableHandler {
         let tableHeight = tableView.bounds.height + cellFrameInTable.size.height
         let cellOffsetFactor = cellOffset / tableHeight
         cell.setParallax(percent: cellOffsetFactor)
+    }
+    
+    func pullRefresh(sender:UIRefreshControl) {
+        handlerDelegate?.moviesTableHandlerDidPullRefresh(handler: self)
     }
 }

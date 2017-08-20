@@ -15,6 +15,7 @@ public protocol MoviesInput : class {
 
 public protocol MoviesOutput : class {
     func fetch(movies:[Movie])
+    func fetch(currentPage:Int, pagesCount:Int)
     func fetch(movie:TMDBEntity)
     func error(code:Int, description:String)
 }
