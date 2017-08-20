@@ -206,6 +206,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E23C6CEB1F4A58BD004DEBF0 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MovieDetail;
+			sourceTree = "<group>";
+		};
 		E26FDCB81F48B57800956302 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +234,7 @@
 		E2943F311F4888A400E8F20D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E23C6CEB1F4A58BD004DEBF0 /* MovieDetail */,
 				E2972C951F48C18F00F9DE2D /* MoviesList */,
 			);
 			path = Scenes;
@@ -345,7 +353,7 @@
 				E2972CA91F48CC8400F9DE2D /* MoviesRouter.swift */,
 				E2972CA61F48CC8400F9DE2D /* MoviesConfigurator.swift */,
 			);
-			name = MoviesList;
+			path = MoviesList;
 			sourceTree = "<group>";
 		};
 		E2972C961F48C1BD00F9DE2D /* Comon */ = {
