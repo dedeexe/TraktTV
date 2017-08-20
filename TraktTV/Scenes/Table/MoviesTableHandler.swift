@@ -100,10 +100,23 @@ extension MoviesTableHandler : UITableViewDelegate {
         if indexPath.row == moviesCount - offsetCell {
             handlerDelegate?.moviesTableHandlerDidRequestNewItems(handler: self)
         }
+        
+        if let cell = cell as? MovieCell {
+            setParallaxTo(cell: cell, at: indexPath)
+        }
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         handlerDelegate?.moviesTableHandler(handler: self, didSelectItemAt: indexPath)
+    }
+    
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if let indexPaths = tableView?.indexPathsForVisibleRows {
+            for indexPath in indexPaths {
+                guard let cell = tableView?.cellForRow(at: indexPath) as? MovieCell else { return }
+                setParallaxTo(cell: cell, at: indexPath)
+            }
+        }
     }
 }
 
@@ -139,5 +152,16 @@ extension MoviesTableHandler {
         tableView?.beginUpdates()
         tableView?.reloadRows(at: [indexPath], with: .fade)
         tableView?.endUpdates()
+    }
+    
+    func setParallaxTo(cell:MovieCell, at indexPath:IndexPath) {
+        guard let tableView = self.tableView else { return }
+        
+        let cellFrame = tableView.rectForRow(at: indexPath)
+        let cellFrameInTable = tableView.convert(cellFrame, to: tableView.superview)
+        let cellOffset = cellFrameInTable.origin.y + cellFrameInTable.size.height
+        let tableHeight = tableView.bounds.height + cellFrameInTable.size.height
+        let cellOffsetFactor = cellOffset / tableHeight
+        cell.setParallax(percent: cellOffsetFactor)
     }
 }

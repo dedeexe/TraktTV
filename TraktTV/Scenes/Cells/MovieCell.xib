@@ -11,34 +11,34 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="186" id="KGk-i7-Jjw" customClass="MovieCell" customModule="TraktTV" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="500" height="142"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="255" id="KGk-i7-Jjw" customClass="MovieCell" customModule="TraktTV" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="211"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="500" height="141.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="500" height="210.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymE-DY-Wce">
-                        <rect key="frame" x="0.0" y="1" width="500" height="140"/>
+                        <rect key="frame" x="0.0" y="1" width="500" height="160"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wCu-21-FMx">
-                                <rect key="frame" x="0.0" y="0.0" width="500" height="140"/>
+                                <rect key="frame" x="0.0" y="0.0" width="500" height="160"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4W5-QP-a1F">
-                                <rect key="frame" x="0.0" y="0.0" width="500" height="140"/>
+                                <rect key="frame" x="0.0" y="0.0" width="500" height="160"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Id-yh-WWu">
-                                        <rect key="frame" x="0.0" y="0.0" width="500" height="140"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="500" height="160"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lY9-Kn-f9l">
-                                        <rect key="frame" x="16" y="87" width="468" height="19"/>
+                                        <rect key="frame" x="16" y="107" width="468" height="19"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SyD-Jy-hcj">
-                                        <rect key="frame" x="16" y="106" width="468" height="18"/>
+                                        <rect key="frame" x="16" y="126" width="468" height="18"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="4W5-QP-a1F" secondAttribute="bottom" id="DA2-1d-BpN"/>
-                            <constraint firstAttribute="height" constant="140" id="PZ2-Vt-XeM"/>
+                            <constraint firstAttribute="height" constant="160" id="PZ2-Vt-XeM"/>
                             <constraint firstItem="wCu-21-FMx" firstAttribute="top" secondItem="ymE-DY-Wce" secondAttribute="top" id="axQ-MI-fWk"/>
                             <constraint firstItem="wCu-21-FMx" firstAttribute="leading" secondItem="ymE-DY-Wce" secondAttribute="leading" id="k6k-Ws-XUx"/>
                             <constraint firstItem="4W5-QP-a1F" firstAttribute="leading" secondItem="ymE-DY-Wce" secondAttribute="leading" id="oVX-qm-bcM"/>
@@ -88,7 +88,7 @@
                 <outlet property="topImageSpacing" destination="axQ-MI-fWk" id="Quh-b1-bme"/>
                 <outlet property="yearLabel" destination="SyD-Jy-hcj" id="mrF-VN-yRd"/>
             </connections>
-            <point key="canvasLocation" x="21" y="-88"/>
+            <point key="canvasLocation" x="21" y="-53.5"/>
         </tableViewCell>
     </objects>
 </document>

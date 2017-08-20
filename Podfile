@@ -6,8 +6,6 @@ target 'TraktTV' do
   use_frameworks!
   pod 'ObjectMapper', '~> 2.2'
 
-  # Pods for Post2b
-
   target 'TraktTVTests' do
     inherit! :search_paths
     # Pods for testing
