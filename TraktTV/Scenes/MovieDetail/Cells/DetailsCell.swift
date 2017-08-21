@@ -15,6 +15,7 @@ class DetailsCell: UITableViewCell {
     @IBOutlet weak var runtimeLabel     : UILabel!
     @IBOutlet weak var ratingLabel      : UILabel!
     @IBOutlet weak var genresLabel      : UILabel!
+    @IBOutlet weak var overviewLabel    : UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +31,36 @@ class DetailsCell: UITableViewCell {
 
 extension DetailsCell {
     func update(movie:Movie?) {
+        let info            = movie?.tmdbEntity
+        taglineLabel.text   = info?.tagline
+        runtimeLabel.text   = "\(info?.runtime ?? 0) minutos"
+        ratingLabel.text    = String(info?.vote_average ?? 0.0)
+        overviewLabel.text  = info?.overview
         
+        updateLaunchingDate(movie: movie)
+        updateGenres(movie: movie)
+    }
+    
+    func updateLaunchingDate(movie:Movie?) {
+        launchingLabel.text = nil
+        
+        if let dateString = movie?.tmdbEntity?.release_date {
+            let components = dateString.components(separatedBy: "-")
+            let date = components[2] + "/" + components[1] + "/" + components[0]
+            launchingLabel.text = date
+        }
+    }
+    
+    func updateGenres(movie:Movie?) {
+        genresLabel.text = nil
+        
+        if let genres = movie?.tmdbEntity?.genres {
+            var genresString : [String] = []
+            for genre in genres {
+                genresString.append(genre.name ?? "")
+            }
+            genresLabel.text = genresString.joined(separator: ", ")
+        }
+
     }
 }
