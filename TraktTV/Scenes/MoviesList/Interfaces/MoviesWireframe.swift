@@ -9,5 +9,5 @@
 import UIKit
 
 public protocol MoviesWireframe : class {
-    func gotoSomeplace()
+    func gotoDetails(of movie:Movie)
 }

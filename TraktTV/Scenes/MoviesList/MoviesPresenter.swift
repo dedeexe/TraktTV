@@ -111,7 +111,8 @@ extension MoviesPresenter : MoviesTableHandlerDelegate {
     }
     
     public func moviesTableHandler(handler: MoviesTableHandler, didSelectItemAt indexPath: IndexPath) {
-        
+        let movie = self.movies[indexPath.row]
+        router?.gotoDetails(of: movie)
     }
     
     public func moviesTableHandlerDidPullRefresh(handler: MoviesTableHandler) {

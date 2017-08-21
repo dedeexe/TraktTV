@@ -1,14 +1,14 @@
 //
-//  MoviesRouter.swift
+//  MovieDetailRouter.swift
 //  TraktTV
 //
-//  Created by dede.exe on 19/08/17.
+//  Created by dede.exe on 20/08/17.
 //  Copyright © 2017 dede.exe. All rights reserved.
 //
 
 import UIKit
 
-public class MoviesRouter {
+public class MovieDetailRouter {
     
     fileprivate weak var viewController : UIViewController?
     
@@ -29,12 +29,8 @@ public class MoviesRouter {
 }
 
 //MARK: - Wireframe Delegate
-extension MoviesRouter : MoviesWireframe {
-    public func gotoDetails(of movie: Movie) {
-        guard let destination = try? MovieDetailConfigurator().create(using: movie) else { return }
-        
-        DispatchQueue.main.async { [unowned self] in
-            self.viewController?.present(destination, animated: true, completion: nil)
-        }
+extension MovieDetailRouter : MovieDetailWireframe {
+    public func gotoSomeplace() {
+        //Implement the route here
     }
 }
