@@ -16,6 +16,11 @@ public class TheImageDownloader : ImageLoader {
     
     public func loadFrom(url:String, completion:@escaping (RequestResult<UIImage>) -> Void) {
         
+        if let image = TheImageCacher.shared.getImage(named: url) {
+            completion(RequestResult<UIImage>.success(200, image))
+            return
+        }
+        
         guard let urlString = URL(string: url) else {
             let err = NSError(domain: "Image Loader - Invalid URL", code: 1000, userInfo: nil)
             completion(RequestResult.fail(1000, err))
@@ -35,9 +40,10 @@ public class TheImageDownloader : ImageLoader {
                 return
             }
             
+            TheImageCacher.shared.setImage(image, forKey: url)
             completion(RequestResult<UIImage>.success(200, image))
             
-            }.resume()
+        }.resume()
         
     }
     
