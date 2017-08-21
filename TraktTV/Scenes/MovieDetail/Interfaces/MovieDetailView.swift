@@ -9,5 +9,5 @@
 import UIKit
 
 public protocol MovieDetailView : class {
-    func show(movie:Movie?)
+    func reload()
 }

@@ -9,33 +9,56 @@
 import UIKit
 
 class MovieDetailViewController: UIViewController {
+    
+    @IBOutlet weak var tableView            : UITableView!
 
-    fileprivate var presenter : MovieDetailModule?
+    fileprivate var presenter               : MovieDetailModule?
+    fileprivate var tableHandler            : MovieDetailTableHandler?
+    fileprivate var tableHandlerDelegate    : MovieDetailTableHandlerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         assertDependencies()
+        setup()
+        presenter?.getMovie()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
     
     public func inject(presenter:MovieDetailPresenter?) {
         self.presenter = presenter
     }
     
+    public func inject(tableHandler:MovieDetailTableHandlerDelegate?) {
+        self.tableHandlerDelegate = tableHandler
+    }
+    
     fileprivate func assertDependencies() {
         assert(presenter != nil, "Did not set Presenter to the view")
     }
+    
+    func setup() {
+        setupTableView()
+    }
 }
 
-//MARK: - View Delegate
+// MARK: - Congigurations
+extension MovieDetailViewController {
+    func setupTableView() {
+        tableHandler = MovieDetailTableHandler(with: presenter?.imageLoader)
+        tableHandler?.handlerDelegate = tableHandlerDelegate
+        tableView.delegate = tableHandler
+        tableView.dataSource = tableHandler
+    }
+}
+
+// MARK: - View Delegate
 extension MovieDetailViewController : MovieDetailView {
-    func show(movie: Movie?) {
-        
+    func reload() {
+        DispatchQueue.main.async {[unowned self] in
+            self.tableView.reloadData()
+        }
     }
 }

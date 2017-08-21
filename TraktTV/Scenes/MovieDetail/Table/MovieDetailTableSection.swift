@@ -1,5 +1,5 @@
 //
-//  MovieDetailModule
+//  MovieDetailTableSection.swift
 //  TraktTV
 //
 //  Created by dede.exe on 20/08/17.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-public protocol MovieDetailModule {
-    var imageLoader: ImageLoader? { get }
-    
-    func getMovie()
+enum MovieDetailTableSection : Int {
+    case header = 0
+    case details
+    case count
 }

@@ -25,6 +25,7 @@ public class MovieDetailConfigurator {
         presenter.inject(view: viewController, interactor: interactor, router: router)
         interactor.inject(output: presenter)
         viewController.inject(presenter: presenter)
+        viewController.inject(tableHandler: presenter)
         router.inject(viewController: viewController)
         
         return viewController

@@ -10,11 +10,12 @@ import Foundation
 
 public class MovieDetailPresenter {
     
-    fileprivate weak var view   : MovieDetailView?
-    fileprivate var interactor  : MovieDetailInput?
-    fileprivate var router      : MovieDetailWireframe?
+    fileprivate weak var view               : MovieDetailView?
+    fileprivate var interactor              : MovieDetailInput?
+    fileprivate var router                  : MovieDetailWireframe?
+    fileprivate(set) public var imageLoader : ImageLoader? = TheImageDownloader.shared
     
-    fileprivate var movie       : Movie?
+    fileprivate(set) public var movie       : Movie?
     
     public init(movie:Movie?) {
         self.movie = movie
@@ -33,7 +34,7 @@ public class MovieDetailPresenter {
     }
 }
 
-//MARK: - Presenter Delegates
+// MARK: - Presenter Delegates
 extension MovieDetailPresenter : MovieDetailModule {
     public func getMovie() {
         guard let _ = movie?.tmdbEntity else {
@@ -42,15 +43,18 @@ extension MovieDetailPresenter : MovieDetailModule {
             return
         }
         
-        view?.show(movie: movie)
+        view?.reload()
     }
 }
 
-//MARK: - Output Interactor Delegate
+// MARK: - Output Interactor Delegate
 extension MovieDetailPresenter : MovieDetailOutput {
     public func fetch(movie: TMDBEntity) {
         assertDependencies()
         self.movie?.tmdbEntity = movie
-        self.view?.show(movie: self.movie)
+        self.view?.reload()
     }
 }
+
+// MARK: - Output Interactor Delegate
+extension MovieDetailPresenter : MovieDetailTableHandlerDelegate {}
