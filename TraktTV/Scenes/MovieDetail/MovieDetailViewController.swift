@@ -11,6 +11,7 @@ import UIKit
 class MovieDetailViewController: UIViewController {
     
     @IBOutlet weak var tableView            : UITableView!
+    @IBOutlet weak var closeButton          : UIButton!
 
     fileprivate var presenter               : MovieDetailModule?
     fileprivate var tableHandler            : MovieDetailTableHandler?
@@ -41,6 +42,12 @@ class MovieDetailViewController: UIViewController {
     
     func setup() {
         setupTableView()
+        setBlackStatusBar()
+        setupCloseButton()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 
@@ -52,6 +59,15 @@ extension MovieDetailViewController {
         tableView.delegate = tableHandler
         tableView.dataSource = tableHandler
     }
+    
+    func setupCloseButton() {
+        closeButton.setTitle(UnicodeSymbols.close.rawValue, for: .normal)
+        closeButton.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
+        
+        closeButton.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        closeButton.layer.cornerRadius = closeButton.bounds.height / 2
+        closeButton.layer.masksToBounds = true
+    }
 }
 
 // MARK: - View Delegate
@@ -60,5 +76,13 @@ extension MovieDetailViewController : MovieDetailView {
         DispatchQueue.main.async {[unowned self] in
             self.tableView.reloadData()
         }
+    }
+}
+
+
+// MARK: - Actions
+extension MovieDetailViewController  {
+    func closeAction(sender:UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymE-DY-Wce">
-                        <rect key="frame" x="0.0" y="1" width="500" height="160"/>
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="160"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wCu-21-FMx">
                                 <rect key="frame" x="0.0" y="0.0" width="500" height="160"/>
@@ -44,6 +44,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="4Id-yh-WWu" secondAttribute="trailing" id="Ckq-BA-CJb"/>
                                     <constraint firstItem="SyD-Jy-hcj" firstAttribute="leading" secondItem="4W5-QP-a1F" secondAttribute="leading" constant="16" id="J5Z-Zz-RuT"/>
@@ -72,11 +73,12 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="ymE-DY-Wce" secondAttribute="trailing" id="Anv-Pl-UOC"/>
                     <constraint firstItem="ymE-DY-Wce" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Mir-PI-5cW"/>
-                    <constraint firstItem="ymE-DY-Wce" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="1" id="PEs-dW-Ojm"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ymE-DY-Wce" secondAttribute="bottom" id="PcD-Et-YHl"/>
+                    <constraint firstItem="ymE-DY-Wce" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="PEs-dW-Ojm"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ymE-DY-Wce" secondAttribute="bottom" constant="1" id="PcD-Et-YHl"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

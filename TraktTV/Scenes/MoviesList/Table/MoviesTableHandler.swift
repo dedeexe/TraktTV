@@ -36,6 +36,9 @@ public class MoviesTableHandler : NSObject {
         
         tableView.registerCell(named: String(describing:LoadingCell.self))
         tableView.registerCell(named: String(describing:MovieCell.self))
+        
+        tableView.backgroundColor = UIColor.black
+        
         setupRefreshControl(tableView: tableView)
     }
     

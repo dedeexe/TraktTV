@@ -41,6 +41,11 @@ class MoviesViewController: UIViewController {
     
     fileprivate func setup() {
         setupTableHandler()
+        setBlackStatusBar()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 
